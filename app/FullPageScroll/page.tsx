@@ -31,10 +31,11 @@ export default function Page() {
           width={1980}
           height={1080}
         />
-        <div className="absolute h-[100vh] top-[13rem] z-50 flex flex-col justify-start items-center text-center gap-4">
+        <div className="absolute h-[100vh] top-[13rem] flex flex-col justify-start items-center text-center gap-4">
           <p className="font-medium text-[2rem] text-center">무슨산</p>
           <p className="text-center text-[1rem]">
-            낮은 산 아름다운 저수지 <br />
+            낮은 산 아름다운 저수지
+            <br />
             sdafadsfdsafasdfdsafsadfdasasdfdsafdsaasdfdsafdsafsdafaads
             <br />
             dsfasfasdfjkl;asdjfkl;asdjlkfadslkfjlkasdfjklasdjfkldsajfklsajklfdsaklfjdsakl
@@ -45,7 +46,7 @@ export default function Page() {
         className="flex h-[100vh] w-[100vw]"
         src={OceanIMG}
         alt="Ocean"
-        // layout="reponsive"
+        // layout="fixed"
         width={1980}
         height={1080}
       />

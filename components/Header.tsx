@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <div>
       <header className="fixed w-full top-0 z-50 left-0 bg-[#ffffff50]">
-        <div className="flex flex-wrap p-5  items-center justify-center">
+        <div className="flex flex-wrap p-5 items-center justify-center">
           <nav className="w-full flex flex-wrap items-center justify-around">
             <div className=" hover:text-gray-900">
               <button>산</button>
