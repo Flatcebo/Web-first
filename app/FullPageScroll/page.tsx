@@ -1,121 +1,81 @@
 "use client";
 
+import FloatingButton from "@/components/FloatingButton";
+import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
+import Image from "@/node_modules/next/image";
+import React from "react";
 import { useEffect, useRef } from "react";
+import MountainIMG from "@/public/images/Mountain.jpeg";
+import CafeIMG from "@/public/images/Cafe.jpeg";
+import FoodIMG from "@/public/images/Food.jpeg";
+import OceanIMG from "@/public/images/Ocean.jpeg";
+import SkyIMG from "@/public/images/Sky.jpeg";
+
+// import ReactFullPage from "@fullpag";
 
 export default function Page() {
   const DIVIDER_HEIGHT = 5;
   const outerRef = useRef<any>();
 
-  useEffect(() => {
-    const wheelHandler = (e: React.WheelEvent) => {
-      // e.preventDefault();
-      const { deltaY } = e;
-      const { scrollTop } = outerRef.current;
-      const pageHeight = window.innerHeight;
-
-      if (deltaY > 0) {
-        // 스크롤 내릴 때
-        if (scrollTop >= 0 && scrollTop < pageHeight) {
-          //현재 1페이지
-          console.log("현재 1페이지, down");
-          outerRef.current.scrollTo({
-            top: pageHeight,
-            left: 0,
-            behavior: "smooth",
-          });
-        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-          //현재 2페이지
-          console.log("현재 2페이지, down");
-          outerRef.current.scrollTo({
-            top: pageHeight * 2,
-            left: 0,
-            behavior: "smooth",
-          });
-        } else {
-          // 현재 3페이지
-          console.log("현재 3페이지, down");
-          outerRef.current.scrollTo({
-            top: pageHeight * 2,
-            left: 0,
-            behavior: "smooth",
-          });
-        }
-      } else {
-        // 스크롤 올릴 때
-        if (scrollTop >= 0 && scrollTop < pageHeight) {
-          //현재 1페이지
-          console.log("현재 1페이지, up");
-          outerRef.current.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
-        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-          //현재 2페이지
-          console.log("현재 2페이지, up");
-          outerRef.current.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
-        } else {
-          // 현재 3페이지
-          console.log("현재 3페이지, up");
-          outerRef.current.scrollTo({
-            top: pageHeight,
-            left: 0,
-            behavior: "smooth",
-          });
-        }
-      }
-      console.log(pageHeight);
-      // if (deltaY > 0) {
-      //   console.log("up");
-      // } else {
-      //   console.log("down");
-      // }
-
-      // console.log(pageHeight, scrollTop);
-      // // 현재 페이지 계산
-      // const currentPage = Math.floor(scrollTop / pageHeight) + 1;
-
-      // let targetPage;
-      // if (deltaY > 0) {
-      //   // 스크롤 내릴 때
-      //   targetPage = Math.min(currentPage + 1, 3);
-      // } else {
-      //   // 스크롤 올릴 때
-      //   targetPage = Math.max(currentPage - 1, 1);
-      // }
-
-      // console.log(`현재 ${currentPage}페이지, ${deltaY > 0 ? "down" : "up"}`);
-
-      // outerRef.current.scrollTo({
-      //   top: (targetPage - 1) * pageHeight,
-      //   left: 0,
-      //   behavior: "smooth",
-      // });
-    };
-    const outerDivRefCurrent = outerRef.current;
-    outerDivRefCurrent.addEventListener("wheel", wheelHandler, {
-      passive: false,
-    });
-    return () => {
-      outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
-    };
-  }, []);
-
   return (
-    <div ref={outerRef}>
-      <div className="flex h-[100vh] justify-center items-center text-[100px] bg-[red]">
-        1
+    <div ref={outerRef} className="w-full h-full">
+      <Header />
+      <Sidebar />
+      <div className="h-[100vh] w-full flex justify-center items-center">
+        <Image
+          className="flex h-[100vh] w-[100vw]"
+          src={MountainIMG}
+          alt="Mountain"
+          // layout="reponsive"
+          width={1980}
+          height={1080}
+        />
+        <div className="absolute h-[100vh] top-[13rem] z-50 flex flex-col justify-start items-center text-center gap-4">
+          <p className="font-medium text-[2rem] text-center">무슨산</p>
+          <p className="text-center text-[1rem]">
+            낮은 산 아름다운 저수지 <br />
+            sdafadsfdsafasdfdsafsadfdasasdfdsafdsaasdfdsafdsafsdafaads
+            <br />
+            dsfasfasdfjkl;asdjfkl;asdjlkfadslkfjlkasdfjklasdjfkldsajfklsajklfdsaklfjdsakl
+          </p>
+        </div>
       </div>
-      <div className="flex h-[100vh] justify-center items-center text-[100px] bg-[yellow]">
-        2
-      </div>
-      <div className="flex h-[100vh] justify-center items-center text-[100px] bg-[blue]">
-        3
-      </div>
+      <Image
+        className="flex h-[100vh] w-[100vw]"
+        src={OceanIMG}
+        alt="Ocean"
+        // layout="reponsive"
+        width={1980}
+        height={1080}
+      />
+
+      <Image
+        className="flex h-[100vh] w-[100vw]"
+        src={SkyIMG}
+        alt="Sky"
+        // layout="reponsive"
+        width={1980}
+        height={1080}
+      />
+      <Image
+        className="flex h-[100vh] w-[100vw]"
+        src={FoodIMG}
+        alt="Food"
+        // layout="reponsive"
+        width={1980}
+        height={1080}
+      />
+      <Image
+        className="flex h-[100vh] w-[100vw]"
+        src={CafeIMG}
+        alt="Cafe"
+        // layout="reponsive"
+        width={1980}
+        height={1080}
+      />
+
+      <FloatingButton />
     </div>
   );
 }

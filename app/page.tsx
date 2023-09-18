@@ -1,8 +1,12 @@
 export default function Home() {
-  console.log("hhih");
   return (
     <div>
-      <div>hi</div>
+      <div>
+        <span>근수형 하이요</span>
+      </div>
+      <a href="/FullPageScroll">
+        <button className="bg-[red]">FullpageScroll 이동</button>
+      </a>
     </div>
   );
 }
