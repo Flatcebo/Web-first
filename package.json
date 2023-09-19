@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.40",
+    "@types/next": "^9.0.0",
     "@types/node": "^20.5.7",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
