@@ -24,7 +24,7 @@ export default function Page() {
       <Header />
       <Sidebar />
       <div className="h-[100vh] w-full flex justify-center items-center">
-        {/* <img src="/images/Cafe.jpeg" width={500} height={300} as="public"/> */}
+        {/* 이미지를 화면 크기에 맞게 조절하는 작업해야함 */}
         <Image
           className="flex h-[100vh] w-[100vw]"
           loader={imgLoad}
@@ -34,7 +34,8 @@ export default function Page() {
           height={1080}
           priority
         />
-        <div className="absolute h-[100vh] top-[13rem] flex flex-col justify-start items-center text-center gap-4">
+        {/* 텍스트 길이 때문에 휴대폰으로 접속시 헤더가 길어지고 빈공간이 생기는거 같음 / 텍스트를 반응형으로 작업 하거나 텍스트 공간을 지정해줘야함  */}
+        <div className="absolute  w-[50vw] top-[12rem] flex flex-col justify-start items-center text-center gap-4">
           <p className="font-medium text-[2rem] text-center">무슨산</p>
           <p className="text-center text-[1rem]">
             낮은 산 아름다운 저수지
