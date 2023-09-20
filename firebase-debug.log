@@ -1,0 +1,60 @@
+[debug] [2023-09-20T12:26:18.375Z] ----------------------------------------------------------------------
+[debug] [2023-09-20T12:26:18.377Z] Command:       /Users/bagdongseog/.nvm/versions/node/v16.17.1/bin/node /Users/bagdongseog/.nvm/versions/node/v16.17.1/bin/firebase deploy
+[debug] [2023-09-20T12:26:18.377Z] CLI Version:   12.5.4
+[debug] [2023-09-20T12:26:18.377Z] Platform:      darwin
+[debug] [2023-09-20T12:26:18.378Z] Node Version:  v16.17.1
+[debug] [2023-09-20T12:26:18.379Z] Time:          Wed Sep 20 2023 21:26:18 GMT+0900 (대한민국 표준시)
+[debug] [2023-09-20T12:26:18.379Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-20T12:26:18.382Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-09-20T12:26:18.460Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-20T12:26:18.461Z] > authorizing via signed-in user (az8601@gmail.com)
+[debug] [2023-09-20T12:26:18.461Z] [iam] checking project host-portf for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-09-20T12:26:18.461Z] > refreshing access token with scopes: []
+[debug] [2023-09-20T12:26:18.462Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-20T12:26:18.462Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-20T12:26:18.688Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-09-20T12:26:18.688Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-20T12:26:18.732Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/host-portf:testIamPermissions [none]
+[debug] [2023-09-20T12:26:18.733Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/host-portf:testIamPermissions x-goog-quota-user=projects/host-portf
+[debug] [2023-09-20T12:26:18.733Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/host-portf:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-20T12:26:19.539Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/host-portf:testIamPermissions 200
+[debug] [2023-09-20T12:26:19.539Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/host-portf:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-20T12:26:19.540Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/host-portf [none]
+[debug] [2023-09-20T12:26:20.072Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/host-portf 200
+[debug] [2023-09-20T12:26:20.073Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/host-portf {"projectId":"host-portf","projectNumber":"553087876278","displayName":"host-portf","name":"projects/host-portf","resources":{"hostingSite":"host-portf","storageBucket":"host-portf.appspot.com","locationId":"asia-east1"},"state":"ACTIVE","etag":"1_fa577335-0998-4857-9756-7c792780454d"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2023-09-20T12:26:28.161Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-09-20T12:26:28.161Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] - info Creating an optimized production build...
+
+[info] - info Compiled successfully
+
+[info] - info Linting and checking validity of types...
+
+[info] Failed to compile.
+
+
+[info] ./app/FullPageScroll/skys/page.tsx:75:14
+Type error: Type '{ key: number; pageNum: number; bgColor: string; window: Window; pageRefs: MutableRefObject<HTMLDivElement[]>; }' is missing the following properties from type 'ISectionProps': src, alt, loader, ImgClassName, and 2 more.
+
+  73 |         {pageObjArray.map((item, index) => {
+  74 |           return (
+> 75 |             <Section
+     |              ^
+  76 |               key={index}
+  77 |               pageNum={item.pageNum}
+  78 |               bgColor={item.bgColor}
+
+[debug] [2023-09-20T12:26:42.308Z] Error: ENOENT: no such file or directory, open '/Users/bagdongseog/Web-first/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
