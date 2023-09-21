@@ -15,9 +15,13 @@ interface ISectionProps {
   src: StaticImageData | any;
   alt: string;
   loader: ({ src, width, quality }: ImageLoaderProps) => string;
-  ImgClassName: string;
-  ImgWidth: number;
-  ImgHeight: number;
+  imgClassName: string;
+  imgWidth: number;
+  imgHeight: number;
+  descTitle: string;
+  descContent1: string;
+  descContent2: string;
+  descContent3: string;
 }
 
 const Section = (props: ISectionProps) => {
@@ -26,18 +30,27 @@ const Section = (props: ISectionProps) => {
       ref={(element) => {
         props.pageRefs.current[props.pageNum] = element!;
       }}
-      className={`w-full h-full ${props.bgColor}`}
+      className={`flex w-full h-full ${props.bgColor}`}
     >
       {/* 여기에 이미지 테크 리팩토링으로 넣으면 됨 */}
       <Image
         src={props.src}
         alt={props.alt}
         loader={props.loader}
-        className={`flex h-[100vh] w-[100vw] ${props.ImgClassName}`}
-        width={props.ImgWidth}
-        height={props.ImgHeight}
+        className={`flex h-[100vh] w-[100vw] ${props.imgClassName}`}
+        width={props.imgWidth}
+        height={props.imgHeight}
       />
-      {/* <span>Page {props.pageNum}</span> */}
+      <div className="absolute flex flex-col w-full mt-[13rem] justify-start items-center text-center gap-4">
+        <p className="font-medium text-[2rem] text-center">{props.descTitle}</p>
+        <p className="text-center text-[1rem]">
+          {props.descContent1}
+          <br />
+          {props.descContent2}
+          <br />
+          {props.descContent3}
+        </p>
+      </div>
     </div>
   );
 };

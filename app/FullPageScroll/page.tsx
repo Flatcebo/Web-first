@@ -17,16 +17,64 @@ import Section from "@/components/Section";
 
 export interface IPageObj {
   pageNum: number;
-  // bgColor: string;
-  // src?: any;
 }
 
 const pageObjArray = [
-  { pageNum: 1, src: MountainIMG, bgColor: "", alt: "" },
-  { pageNum: 2, src: OceanIMG, bgColor: "", alt: "" },
-  { pageNum: 3, src: SkyIMG, bgColor: "", alt: "" },
-  { pageNum: 4, src: FoodIMG, bgColor: "", alt: "" },
-  { pageNum: 5, src: CafeIMG, bgColor: "", alt: "" },
+  {
+    pageNum: 1,
+    src: MountainIMG,
+    headerName: "",
+    bgColor: "",
+    alt: "",
+    descTitle: "1",
+    descContent1: "11",
+    descContent2: "111",
+    descContent3: "1111",
+  },
+  {
+    pageNum: 2,
+    src: OceanIMG,
+    headerName: "",
+    bgColor: "",
+    alt: "",
+    descTitle: "2",
+    descContent1: "22",
+    descContent2: "222",
+    descContent3: "2222",
+  },
+  {
+    pageNum: 3,
+    src: SkyIMG,
+    headerName: "",
+    bgColor: "",
+    alt: "",
+    descTitle: "3",
+    descContent1: "33",
+    descContent2: "333",
+    descContent3: "3333",
+  },
+  {
+    pageNum: 4,
+    src: FoodIMG,
+    headerName: "",
+    bgColor: "",
+    alt: "",
+    descTitle: "4",
+    descContent1: "44",
+    descContent2: "444",
+    descContent3: "4444",
+  },
+  {
+    pageNum: 5,
+    src: CafeIMG,
+    headerName: "",
+    bgColor: "",
+    alt: "",
+    descTitle: "5",
+    descContent1: "55",
+    descContent2: "555",
+    descContent3: "5555",
+  },
 ];
 
 export default function Page() {
@@ -83,7 +131,12 @@ export default function Page() {
 
   return (
     <div ref={outerRef} className="w-full h-full">
-      <Header />
+      <Header
+        pageObjArray={pageObjArray}
+        currentPageNum={currentPageNum}
+        handlePointClick={handlePointClick}
+        headerName={"sss"}
+      />
       <Sidebar />
 
       {/* <main className="relative"> */}
@@ -98,22 +151,16 @@ export default function Page() {
             src={item.src}
             alt={item.alt}
             loader={imgLoad}
-            ImgClassName={""}
-            ImgWidth={1980}
-            ImgHeight={1080}
+            imgClassName={""}
+            imgWidth={1980}
+            imgHeight={1080}
+            descTitle={item.descTitle}
+            descContent1={item.descContent1}
+            descContent2={item.descContent2}
+            descContent3={item.descContent3}
           />
         );
       })}
-      <div className="absolute w-full top-[13rem] flex flex-col justify-start items-center text-center gap-4">
-        <p className="font-medium text-[2rem] text-center">무슨산</p>
-        <p className="text-center text-[1rem]">
-          낮은 산 아름다운 저수지
-          <br />
-          sdafadsfdsafasdfdsafsadfdasasdfdsafdsaasdfdsafdsafsdafaads
-          <br />
-          dsfasfasdfjkl;asdjfkl;asdjlkfadslkfjlkasdfjklasdjfkldsajfklsajklfdsaklfjdsakl
-        </p>
-      </div>
 
       <div className="flex flex-col space-y-4 fixed top-96 right-10 z-10">
         <Buttons
@@ -130,80 +177,14 @@ export default function Page() {
 }
 
 {
-  /* <div className="h-[100vh] w-full flex justify-center items-center"> */
-}
-{
-  /* 이미지를 화면 크기에 맞게 조절하는 작업해야함 */
-}
-{
-  /* <Image
-          className="flex h-[100vh] w-[100vw]"
-          loader={imgLoad}
-          src={MountainIMG}
-          alt="Mountain"
-          width={1980}
-          height={1080}
-          priority
-        /> */
-}
-{
-  /* 텍스트 길이 때문에 휴대폰으로 접속시 헤더가 길어지고 빈공간이 생기는거 같음 / 텍스트를 반응형으로 작업 하거나 텍스트 공간을 지정해줘야함  */
-}
-{
-  /* <div className="absolute  w-[50vw] top-[13rem] flex flex-col justify-start items-center text-center gap-4">
-          <p className="font-medium text-[2rem] text-center">무슨산</p>
-          <p className="text-center text-[1rem]">
-            낮은 산 아름다운 저수지
-            <br />
-            sdafadsfdsafasdfdsafsadfdasasdfdsafdsaasdfdsafdsafsdafaads
-            <br />
-            dsfasfasdfjkl;asdjfkl;asdjlkfadslkfjlkasdfjklasdjfkldsajfklsajklfdsaklfjdsakl
-          </p>
-        </div> */
-}
-{
-  /* </div> */
-}
-{
-  /* <Image
-        className="flex h-[100vh] w-[100vw]"
-        loader={imgLoad}
-        src={OceanIMG}
-        alt="Ocean"
-        // layout="fixed"
-        width={1980}
-        height={1080}
-        priority
-      />
-
-      <Image
-        className="flex h-[100vh] w-[100vw]"
-        loader={imgLoad}
-        src={SkyIMG}
-        alt="Sky"
-        // layout="reponsive"
-        width={1980}
-        height={1080}
-        priority
-      />
-      <Image
-        className="flex h-[100vh] w-[100vw]"
-        loader={imgLoad}
-        src={FoodIMG}
-        alt="Food"
-        // layout="reponsive"
-        width={1980}
-        height={1080}
-        priority
-      />
-      <Image
-        className="flex h-[100vh] w-[100vw]"
-        loader={imgLoad}
-        src={CafeIMG}
-        alt="Cafe"
-        // layout="reponsive"
-        width={1980}
-        height={1080}
-        priority
-      /> */
+  /* <div className="absolute w-full top-[13rem] flex flex-col justify-start items-center text-center gap-4">
+        <p className="font-medium text-[2rem] text-center">무슨산</p>
+        <p className="text-center text-[1rem]">
+          낮은 산 아름다운 저수지
+          <br />
+          sdafadsfdsafasdfdsafsadfdasasdfdsafdsaasdfdsafdsafsdafaads
+          <br />
+          dsfasfasdfjkl;asdjfkl;asdjlkfadslkfjlkasdfjklasdjfkldsajfklsajklfdsaklfjdsakl
+        </p>
+      </div> */
 }
