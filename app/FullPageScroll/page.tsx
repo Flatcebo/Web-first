@@ -12,8 +12,9 @@ import FoodIMG from "@/public/images/Food.jpeg";
 import OceanIMG from "@/public/images/Ocean.jpeg";
 import SkyIMG from "@/public/images/Sky.jpeg";
 import { imgLoader } from "@/utils/imgLoader";
-import Buttons from "@/components/Buttons";
+// import Buttons from "@/components/Buttons";
 import Section from "@/components/Section";
+import { Buttons } from "@/components/Buttons";
 
 export interface IPageObj {
   pageNum: number;
@@ -131,12 +132,26 @@ export default function Page() {
 
   return (
     <div ref={outerRef} className="w-full h-full">
+      {/* {pageObjArray.map((i, idx) => { */}
+      {/* return ( */}
       <Header
         pageObjArray={pageObjArray}
         currentPageNum={currentPageNum}
         handlePointClick={handlePointClick}
-        headerName={"sss"}
+        // headerName={"aa"}
+        // sideButton={""}
+        // key={idx}
+        // firstButton={() => {
+        //   console.log("hi");
+        // }}
+        // pageObjArray={pageObjArray}
+        // currentPageNum={currentPageNum}
+        // handlePointClick={handlePointClick}
+        // headerName={"sss"}
       />
+      {/* ); */}
+      {/* })} */}
+
       <Sidebar />
 
       {/* <main className="relative"> */}
@@ -162,11 +177,14 @@ export default function Page() {
         );
       })}
 
-      <div className="flex flex-col space-y-4 fixed top-96 right-10 z-10">
+      <div className="flex flex-col space-y-2 fixed top-96 right-10 z-10">
         <Buttons
           pageObjArray={pageObjArray}
           currentPageNum={currentPageNum}
           handlePointClick={handlePointClick}
+          buttonStyle="w-4 h-4 rounded-full cursor-pointer transition-all"
+          // buttonName=""
+          bgColor={true}
         />
       </div>
       {/* </main> */}

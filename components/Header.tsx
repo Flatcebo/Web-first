@@ -1,13 +1,15 @@
 import { IPageObj } from "@/app/FullPageScroll/page";
+import { Buttons } from "@/components/Buttons";
 import Image, { ImageLoaderProps } from "@/node_modules/next/image";
 import { cls } from "@/utils/cls";
 
-// 헤더 버튼이름 바꾸게 하기/ 현재는 맵함수사용으로 인해 안됨
+// 헤더 버튼이름 바꾸게 하기
 interface IButtonsProps {
   pageObjArray: IPageObj[];
   currentPageNum: number;
   handlePointClick: (pageNum: number) => void;
-  headerName: string;
+  // headerName: "aa" | "dd";
+  // sideButton: string;
 }
 
 export default function Header(props: IButtonsProps) {
@@ -20,28 +22,15 @@ export default function Header(props: IButtonsProps) {
               {/* <Image src={""} alt="LOGO" /> */}
               LOGO
             </div>
-
-            {props.pageObjArray.map((item, index) => {
-              return (
-                <div
-                  key={item.pageNum}
-                  className={cls(
-                    "hover:text-gray-900",
-                    props.currentPageNum === item.pageNum
-                      ? "text-gray-500"
-                      : "text-[black]"
-                  )}
-                >
-                  <button
-                    onClick={() => {
-                      props.handlePointClick(item.pageNum);
-                    }}
-                  >
-                    {props.headerName}
-                  </button>
-                </div>
-              );
-            })}
+            <Buttons
+              pageObjArray={props.pageObjArray}
+              currentPageNum={props.currentPageNum}
+              handlePointClick={props.handlePointClick}
+              buttonStyle="hover:text-gray-400"
+              // buttonName={props.pageObjArray.map(() => {
+              //   return props.headerName;
+              // })}
+            />
           </nav>
         </div>
       </header>
