@@ -18,13 +18,14 @@ import { Buttons } from "@/components/Buttons";
 
 export interface IPageObj {
   pageNum: number;
+  headerName: string;
 }
 
 const pageObjArray = [
   {
     pageNum: 1,
     src: MountainIMG,
-    headerName: "",
+    headerName: "산",
     bgColor: "",
     alt: "",
     descTitle: "1",
@@ -35,7 +36,7 @@ const pageObjArray = [
   {
     pageNum: 2,
     src: OceanIMG,
-    headerName: "",
+    headerName: "바다",
     bgColor: "",
     alt: "",
     descTitle: "2",
@@ -46,7 +47,7 @@ const pageObjArray = [
   {
     pageNum: 3,
     src: SkyIMG,
-    headerName: "",
+    headerName: "하늘",
     bgColor: "",
     alt: "",
     descTitle: "3",
@@ -57,7 +58,7 @@ const pageObjArray = [
   {
     pageNum: 4,
     src: FoodIMG,
-    headerName: "",
+    headerName: "음식",
     bgColor: "",
     alt: "",
     descTitle: "4",
@@ -68,7 +69,7 @@ const pageObjArray = [
   {
     pageNum: 5,
     src: CafeIMG,
-    headerName: "",
+    headerName: "카페",
     bgColor: "",
     alt: "",
     descTitle: "5",
@@ -132,25 +133,11 @@ export default function Page() {
 
   return (
     <div ref={outerRef} className="w-full h-full">
-      {/* {pageObjArray.map((i, idx) => { */}
-      {/* return ( */}
       <Header
         pageObjArray={pageObjArray}
         currentPageNum={currentPageNum}
         handlePointClick={handlePointClick}
-        // headerName={"aa"}
-        // sideButton={""}
-        // key={idx}
-        // firstButton={() => {
-        //   console.log("hi");
-        // }}
-        // pageObjArray={pageObjArray}
-        // currentPageNum={currentPageNum}
-        // handlePointClick={handlePointClick}
-        // headerName={"sss"}
       />
-      {/* ); */}
-      {/* })} */}
 
       <Sidebar />
 
@@ -183,8 +170,7 @@ export default function Page() {
           currentPageNum={currentPageNum}
           handlePointClick={handlePointClick}
           buttonStyle="w-4 h-4 rounded-full cursor-pointer transition-all"
-          // buttonName=""
-          bgColor={true}
+          bgColor
         />
       </div>
       {/* </main> */}

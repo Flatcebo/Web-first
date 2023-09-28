@@ -8,8 +8,6 @@ interface IButtonsProps {
   pageObjArray: IPageObj[];
   currentPageNum: number;
   handlePointClick: (pageNum: number) => void;
-  // headerName: "aa" | "dd";
-  // sideButton: string;
 }
 
 export default function Header(props: IButtonsProps) {
@@ -18,7 +16,7 @@ export default function Header(props: IButtonsProps) {
       <header className="fixed w-full top-0 z-50 left-0 bg-[#ffffff50]">
         <div className="flex flex-wrap p-5 items-center justify-center">
           <nav className="w-full flex flex-wrap items-center justify-around">
-            <div className="flex ">
+            <div className="flex">
               {/* <Image src={""} alt="LOGO" /> */}
               LOGO
             </div>
@@ -27,9 +25,7 @@ export default function Header(props: IButtonsProps) {
               currentPageNum={props.currentPageNum}
               handlePointClick={props.handlePointClick}
               buttonStyle="hover:text-gray-400"
-              // buttonName={props.pageObjArray.map(() => {
-              //   return props.headerName;
-              // })}
+              pushName
             />
           </nav>
         </div>

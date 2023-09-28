@@ -6,8 +6,9 @@ interface IButtonsProps {
   currentPageNum: number;
   handlePointClick: (pageNum: number) => void;
   buttonStyle: string;
-  buttonName?: string[];
+  // buttonName?: string[] | number | any;
   bgColor?: boolean;
+  pushName?: boolean;
 }
 
 export function Buttons(props: IButtonsProps) {
@@ -32,7 +33,7 @@ export function Buttons(props: IButtonsProps) {
                 props.handlePointClick(item.pageNum);
               }}
             >
-              {props.buttonName}
+              {props.pushName && item.headerName}
             </button>
           </div>
         );
