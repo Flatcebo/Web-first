@@ -5,7 +5,10 @@ import { useState } from "react";
 interface ISidebarProps {
   openContentName: string;
   closedContentName: string;
-  buttonTextStyle?: string;
+  onButtonTextStyle?: string;
+  offButtonTextStyle?: string;
+  onButtonStyle?: string;
+  offButtonStyle?: string;
 }
 
 // map 함수를 사용해서 헤더 버튼처럼 배열하나 만들어서 이름 및 성능에 관한 세팅하고 useState의 사용을 최소화 함.
@@ -16,11 +19,11 @@ export default function Sidebar(props: ISidebarProps) {
     <div className="">
       {sideOn ? (
         <div>
-          <aside className="fixed h-screen top-16 z-50 bg-[#ffffff50]">
+          <aside className={`${props.offButtonStyle}`}>
             <div className="flex flex-col p-7">
               <div className="flex top-0 mb-3 justify-end">
                 <button
-                  className={`text-[12px] text-[white] hover:text-[#00000072] ${props.buttonTextStyle}`}
+                  className={`${props.offButtonTextStyle}`}
                   onClick={() => {
                     setSideOff(false);
                   }}
@@ -50,11 +53,11 @@ export default function Sidebar(props: ISidebarProps) {
         </div>
       ) : (
         <div>
-          <aside className="fixed top-16 z-50 bg-[#ffffff50]">
+          <aside className={`${props.onButtonStyle}`}>
             <div className="flex">
               <div className="">
                 <button
-                  className={`text-[12px] text-[white] p-5 hover:text-[#00000072] hover:bg-[#9a9a9a76] ${props.buttonTextStyle}`}
+                  className={`${props.onButtonTextStyle}`}
                   onClick={() => {
                     setSideOff(true);
                   }}

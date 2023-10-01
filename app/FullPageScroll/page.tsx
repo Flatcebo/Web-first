@@ -139,7 +139,14 @@ export default function Page() {
         handlePointClick={handlePointClick}
       />
 
-      <Sidebar openContentName="Sidebar" closedContentName="Closed" />
+      <Sidebar
+        openContentName="Sidebar"
+        closedContentName="Closed"
+        onButtonStyle="fixed top-16 z-50 bg-[#ffffff50]"
+        offButtonStyle="fixed h-screen top-16 z-50 bg-[#ffffff50]"
+        onButtonTextStyle="text-[12px] text-[white] p-5 hover:text-[#00000072] hover:bg-[#9a9a9a76]"
+        offButtonTextStyle="text-[12px] text-[white] hover:text-[#00000072]"
+      />
 
       {/* <main className="relative"> */}
       {pageObjArray.map((item, index) => {
@@ -164,7 +171,7 @@ export default function Page() {
         );
       })}
 
-      <div className="flex flex-col space-y-2 fixed top-96 right-10 z-10">
+      <div className="flex flex-col space-y-2 fixed h-[100vh] top-[0%] right-[2%] justify-center items-center  z-10">
         <Buttons
           pageObjArray={pageObjArray}
           currentPageNum={currentPageNum}

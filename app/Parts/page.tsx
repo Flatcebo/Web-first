@@ -1,11 +1,12 @@
 "use client";
 
+import Modal from "@/components/Modal";
 import Sidebar from "@/components/Sidebar";
 import Link from "next/link";
 
 export default function Page() {
   return (
-    <div>
+    <div className="w-[100vw] h-[100vh]">
       <div className="">
         <div className="flex justify-center items-center text-center ">
           <Link
@@ -15,9 +16,25 @@ export default function Page() {
             HOME
           </Link>
         </div>
-        {/* <h1 className="text-[white]">Sidebar</h1> */}
       </div>
-      <Sidebar openContentName="Sidebar" closedContentName="Closed" />
+      <div className="flex justify-center items-center">
+        <div>
+          <Sidebar
+            openContentName="Sidebar"
+            closedContentName="Close"
+            onButtonStyle="z-50"
+            offButtonStyle="fixed h-[80vh] left-[30%] z-50 bg-[#ffffff50]"
+            onButtonTextStyle="text-[12px] text-[white] px-10 py-5 hover:text-[#00000072] hover:bg-[#9a9a9a76]"
+            offButtonTextStyle="text-[12px] text-[white] hover:text-[#00000072]"
+          />
+          <Modal
+            onButtonStyle="text-[12px] text-[white] px-10 py-5 hover:text-[#00000072] hover:bg-[#9a9a9a76]"
+            offButtonStyle="text-[12px] text-[white] hover:text-[#00000072] right-0"
+          />
+        </div>
+      </div>
     </div>
   );
 }
+
+// Sidebar buttonStyle = bg-[#ffffff50]
