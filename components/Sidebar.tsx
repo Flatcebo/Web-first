@@ -20,7 +20,7 @@ export default function Sidebar(props: ISidebarProps) {
             <div className="flex flex-col p-7">
               <div className="flex top-0 mb-3 justify-end">
                 <button
-                  className={`text-[12px] text-[white]  hover:text-[#00000072] ${props.buttonTextStyle}`}
+                  className={`text-[12px] text-[white] hover:text-[#00000072] ${props.buttonTextStyle}`}
                   onClick={() => {
                     setSideOff(false);
                   }}
@@ -54,7 +54,7 @@ export default function Sidebar(props: ISidebarProps) {
             <div className="flex">
               <div className="">
                 <button
-                  className={`text-[12px] text-[white] p-5 hover:text-[#00000072] ${props.buttonTextStyle}`}
+                  className={`text-[12px] text-[white] p-5 hover:text-[#00000072] hover:bg-[#9a9a9a76] ${props.buttonTextStyle}`}
                   onClick={() => {
                     setSideOff(true);
                   }}

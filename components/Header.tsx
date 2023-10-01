@@ -2,6 +2,7 @@ import { IPageObj } from "@/app/FullPageScroll/page";
 import { Buttons } from "@/components/Buttons";
 import Image, { ImageLoaderProps } from "@/node_modules/next/image";
 import { cls } from "@/utils/cls";
+import Link from "next/link";
 
 // 헤더 버튼이름 바꾸게 하기
 interface IButtonsProps {
@@ -17,8 +18,10 @@ export default function Header(props: IButtonsProps) {
         <div className="flex flex-wrap p-5 items-center justify-center">
           <nav className="w-full flex flex-wrap items-center justify-around">
             <div className="flex">
-              {/* <Image src={""} alt="LOGO" /> */}
-              LOGO
+              <Link href={"/"}>
+                {/* <Image src={""} alt="LOGO" /> */}
+                HOME
+              </Link>
             </div>
             <Buttons
               pageObjArray={props.pageObjArray}

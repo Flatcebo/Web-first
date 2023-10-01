@@ -8,13 +8,13 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center text-center">
         <Link
           href="/FullPageScroll"
-          className="w-[20vw] bg-[#ffffff3f] text-[white] p-10  hover:text-[#9a9a9a29] hover:bg-[#9a9a9a76]"
+          className="w-[20vw] bg-[#ffffff3f] text-[white] p-10  hover:text-[#00000072] hover:bg-[#9a9a9a76]"
         >
           Fullpage Web
         </Link>
         <Link
           href="/Parts"
-          className="w-[20vw] bg-[#ffffff3f] text-[white] p-10 hover:text-[#9a9a9a29] hover:bg-[#9a9a9a76]"
+          className="w-[20vw] bg-[#ffffff3f] text-[white] p-10 hover:text-[#00000072] hover:bg-[#9a9a9a76]"
         >
           Parts
         </Link>
