@@ -2,11 +2,17 @@
 
 import { useState } from "react";
 
-export default function Sidebar() {
+interface ISidebarProps {
+  openContentName: string;
+  closedContentName: string;
+  buttonTextStyle?: string;
+}
+
+// map 함수를 사용해서 헤더 버튼처럼 배열하나 만들어서 이름 및 성능에 관한 세팅하고 useState의 사용을 최소화 함.
+export default function Sidebar(props: ISidebarProps) {
   const [sideOn, setSideOff] = useState<boolean>(false);
 
   return (
-    // 사이드바 width 넓히기
     <div className="">
       {sideOn ? (
         <div>
@@ -14,12 +20,12 @@ export default function Sidebar() {
             <div className="flex flex-col p-7">
               <div className="flex top-0 mb-3 justify-end">
                 <button
-                  className="text-[12px] text-[black] hover:text-[#00000072]"
+                  className={`text-[12px] text-[white]  hover:text-[#00000072] ${props.buttonTextStyle}`}
                   onClick={() => {
                     setSideOff(false);
                   }}
                 >
-                  닫기
+                  {props.closedContentName}
                 </button>
               </div>
               <nav className="">
@@ -48,12 +54,12 @@ export default function Sidebar() {
             <div className="flex">
               <div className="">
                 <button
-                  className="text-[12px] text-[black] p-5 hover:text-[#00000072]"
+                  className={`text-[12px] text-[white] p-5 hover:text-[#00000072] ${props.buttonTextStyle}`}
                   onClick={() => {
                     setSideOff(true);
                   }}
                 >
-                  열기
+                  {props.openContentName}
                 </button>
               </div>
             </div>

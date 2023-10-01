@@ -139,7 +139,7 @@ export default function Page() {
         handlePointClick={handlePointClick}
       />
 
-      <Sidebar />
+      <Sidebar openContentName="Sidebar" closedContentName="Closed" />
 
       {/* <main className="relative"> */}
       {pageObjArray.map((item, index) => {
