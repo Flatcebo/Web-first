@@ -3,8 +3,12 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="w-full h-full">
-      <h1>Github branch 관리</h1>
-      <div>https://cosmosproject.tistory.com/271</div>
+      {/* <h1>Github branch 관리</h1>
+      <div>https://cosmosproject.tistory.com/271</div> */}
+      <div>
+        난제 : Firebase hosting할때 BackEnd를 위해서 app/api 경로 생성시 deploy
+        안됨{" "}
+      </div>
       <div className="flex flex-col justify-center items-center text-center text-[16px]">
         <Link
           href="/FullPageScroll"

@@ -15,22 +15,57 @@ export default function Modal(props: IModalProps) {
         <div className="w-full h-full flex items-center justify-center">
           <div className="fixed top-[15%] w-[80vw] h-[70vh] bg-[#767676] text-[20px]">
             <form className="m-[2%]">
-              <div className="text-center text-[26px] ">
+              <div className="text-center text-[26px] mb-[2%]">
                 <span>Sign Up</span>
               </div>
-              {/* Form 1행 */}
-              <div className="w-[350px] flex">
-                <div className="mr-[5%]">
-                  <div className="flex flex-col text-center items-end">
-                    <span className="my-5">이름 : </span>
-                    <span className="my-5">이메일 : </span>
-                    <span className="my-5">전화번호 : </span>
+              <div className="flex">
+                {/* Form 1행 */}
+                <div className="w-[350px] flex">
+                  <div className="mr-[5%]">
+                    <div className="flex flex-col text-center items-end">
+                      <span className="my-5">이름 : </span>
+                      <span className="my-5">이메일 : </span>
+                      <span className="my-5">전화번호 : </span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <input
+                      type="text"
+                      className="w-[11vw] my-2 px-1 py-3 rounded-lg"
+                    />
+                    <input
+                      type="email"
+                      className="w-[11vw] my-2 px-1 py-3 rounded-lg"
+                    />
+                    <input
+                      type="phone"
+                      className="w-[11vw] my-2 px-1 py-3 rounded-lg"
+                    />
                   </div>
                 </div>
-                <div className="flex flex-col ">
-                  <input type="text" className="my-2 px-1 py-3 rounded-lg" />
-                  <input type="email" className="my-2 px-1 py-3 rounded-lg" />
-                  <input type="phone" className="my-2 px-1 py-3 rounded-lg" />
+                {/* 2행 */}
+                <div className="w-[350px] flex">
+                  <div className="mr-[5%]">
+                    <div className="flex flex-col text-center items-end">
+                      <span className="my-5">이름 : </span>
+                      <span className="my-5">이메일 : </span>
+                      <span className="my-5">전화번호 : </span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col ">
+                    <input
+                      type="text"
+                      className="w-[11vw] my-2 px-1 py-3 rounded-lg"
+                    />
+                    <input
+                      type="email"
+                      className="w-[11vw] my-2 px-1 py-3 rounded-lg"
+                    />
+                    <input
+                      type="phone"
+                      className="w-[11vw] my-2 px-1 py-3 rounded-lg"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col space-y-[3%]">
