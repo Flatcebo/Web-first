@@ -3,18 +3,18 @@
 import FloatingButton from "@/components/FloatingButton";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
-import Image, { ImageLoaderProps } from "@/node_modules/next/image";
-import React, { useState } from "react";
-import { useEffect, useRef } from "react";
+import Image, {ImageLoaderProps} from "@/node_modules/next/image";
+import React, {useState} from "react";
+import {useEffect, useRef} from "react";
 import MountainIMG from "@/public/images/Mountain.jpeg";
 import CafeIMG from "@/public/images/Cafe.jpeg";
 import FoodIMG from "@/public/images/Food.jpeg";
 import OceanIMG from "@/public/images/Ocean.jpeg";
 import SkyIMG from "@/public/images/Sky.jpeg";
-import { imgLoader } from "@/utils/imgLoader";
+import {imgLoader} from "@/utils/imgLoader";
 // import Buttons from "@/components/Buttons";
 import Section from "@/components/Section";
-import { Buttons } from "@/components/Buttons";
+import {Buttons} from "@/components/Buttons";
 
 export interface IPageObj {
   pageNum: number;
@@ -82,8 +82,8 @@ const pageObjArray = [
 export default function Page() {
   const DIVIDER_HEIGHT = 5;
   const outerRef = useRef<any>();
-  const imgLoad = ({ src, width, quality }: ImageLoaderProps) =>
-    imgLoader({ src, width, quality });
+  const imgLoad = ({src, width, quality}: ImageLoaderProps) =>
+    imgLoader({src, width, quality});
 
   const [windowObj, setWindowObj] = useState<Window>();
   const [currentPageNum, setCurrentPageNum] = useState<number>(1);
@@ -115,6 +115,20 @@ export default function Page() {
     }
   };
 
+  const handleWheel = (event: WheelEvent) => {
+    if (event.deltaY > 0) {
+      // 마우스 휠을 아래로 스크롤할 때 다음 페이지로 이동
+      if (currentPageNum < totalNum) {
+        handlePointClick(currentPageNum + 1);
+      }
+    } else if (event.deltaY < 0) {
+      // 마우스 휠을 위로 스크롤할 때 이전 페이지로 이동
+      if (currentPageNum > 1) {
+        handlePointClick(currentPageNum - 1);
+      }
+    }
+  };
+
   // 버튼 클릭
   const handlePointClick = (pageNum: number) => {
     windowObj?.scrollTo({
@@ -125,11 +139,15 @@ export default function Page() {
 
   useEffect(() => {
     windowObj?.addEventListener("scroll", handlePageChange);
+    // 마우스 휠 이벤트 리스너 등록
+    windowObj?.addEventListener("wheel", handleWheel);
+
     return () => {
       windowObj?.removeEventListener("scroll", handlePageChange);
+      // 마우스 휠 이벤트 리스너 제거
+      windowObj?.removeEventListener("wheel", handleWheel);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [windowObj]);
+  }, [windowObj, currentPageNum]);
 
   return (
     <div ref={outerRef} className="w-full h-full">
