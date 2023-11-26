@@ -1,49 +1,48 @@
-import { useEffect, useState } from "react";
+"use client";
 
-// Firebase Functions 클라이언트 SDK 초기화 (이미 초기화한 경우 생략)
-// import firebase from "firebase/app";
-// import "firebase/functions";
+import React, {useState} from "react";
 
-// import * as functions from "firebase-functions";
+const PasswordProtectedPage = () => {
+  const [password, setPassword] = useState("");
+  const [isUnlocked, setIsUnlocked] = useState(false);
 
-// Firebase 앱 초기화 (이미 초기화한 경우 생략)
-// const firebaseConfig = {
-//   apiKey: "YOUR_API_KEY",
-//   authDomain: "YOUR_AUTH_DOMAIN",
-//   projectId: "YOUR_PROJECT_ID",
-//   storageBucket: "YOUR_STORAGE_BUCKET",
-//   messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-//   appId: "YOUR_APP_ID",
-// };
-// firebase.initializeApp(firebaseConfig);
+  const handlePasswordChange = (event: any) => {
+    setPassword(event.target.value);
+  };
 
-// Firebase Functions 클라이언트 라이브러리 초기화
-// const functions = firebase.functions();
+  const handleUnlock = () => {
+    // 패스워드를 여기에서 확인하고 일치하면 페이지를 잠금 해제합니다.
+    const correctPassword = "1234";
 
-export default function Home() {
-  // const [apiResponse, setApiResponse] = useState("");
-
-  // useEffect(() => {
-  //   // Firebase Function 호출
-  //   const myApi = functions.httpsCallable("myApi");
-
-  //   // 함수 호출
-  //   myApi()
-  //     .then((result: any) => {
-  //       // 외부 API에서 반환한 데이터 사용
-  //       const apiData = result.data.message;
-  //       setApiResponse(apiData);
-  //     })
-  //     .catch((error: any) => {
-  //       // 오류 처리
-  //       console.error("Error:", error);
-  //     });
-  // }, []);
+    if (password === correctPassword) {
+      setIsUnlocked(true);
+    } else {
+      alert("잘못된 패스워드입니다.");
+    }
+  };
 
   return (
     <div>
-      <h1>API Response:</h1>
-      {/* <p>{apiResponse}</p> */}
+      {isUnlocked ? (
+        // 페이지가 잠금 해제되었을 때 보이는 내용
+        <div>
+          <h1>잠금 해제됨</h1>
+          {/* 내용 추가 */}
+        </div>
+      ) : (
+        // 페이지가 잠겨있을 때 보이는 내용
+        <div>
+          <h1>패스워드를 입력하세요</h1>
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+          <button onClick={handleUnlock}>잠금 해제</button>
+        </div>
+      )}
     </div>
   );
-}
+};
+
+export default PasswordProtectedPage;

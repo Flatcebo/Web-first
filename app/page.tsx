@@ -39,6 +39,30 @@ export default function Home() {
         >
           Parts
         </Link>
+        <Link
+          href="/Todo"
+          className="w-[20vw] bg-[#ffffff3f] text-[white] py-10 hover:text-[#00000072] hover:bg-[#9a9a9a76] sm:text-[0.8em] md:text-[1em] lg:text-[1em] xl:text-[1em]"
+        >
+          Todo
+        </Link>
+        <Link
+          href="/Presentation"
+          className="w-[20vw] bg-[#ffffff3f] text-[white] py-10 hover:text-[#00000072] hover:bg-[#9a9a9a76] sm:text-[0.8em] md:text-[1em] lg:text-[1em] xl:text-[1em]"
+        >
+          Leading PT
+        </Link>
+        {/* <Link
+          href="/Map"
+          className="w-[20vw] bg-[#ffffff3f] text-[white] py-10 hover:text-[#00000072] hover:bg-[#9a9a9a76] sm:text-[0.8em] md:text-[1em] lg:text-[1em] xl:text-[1em]"
+        >
+          Map
+        </Link>
+        <Link
+          href="/Test"
+          className="w-[20vw] bg-[#ffffff3f] text-[white] py-10 hover:text-[#00000072] hover:bg-[#9a9a9a76] sm:text-[0.8em] md:text-[1em] lg:text-[1em] xl:text-[1em]"
+        >
+          Test
+        </Link> */}
       </div>
     </div>
   );
