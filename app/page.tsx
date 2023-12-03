@@ -63,6 +63,12 @@ export default function Home() {
         >
           Test
         </Link> */}
+        <Link
+          href="/Calculate"
+          className="w-[20vw] bg-[#ffffff3f] text-[white] py-10 hover:text-[#00000072] hover:bg-[#9a9a9a76] sm:text-[0.8em] md:text-[1em] lg:text-[1em] xl:text-[1em]"
+        >
+          Calculate
+        </Link>
       </div>
     </div>
   );
